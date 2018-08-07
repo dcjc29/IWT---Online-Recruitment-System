@@ -1,0 +1,75 @@
+h1.login {
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    background-color: teal ;
+    color: white;
+    line-height: 150%;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+  }
+  form.login {
+    box-sizing: border-box teal;
+    width: 47%;
+    margin: 70px 100px 100px 100px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 40px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+    display: inline-block;
+    
+  }
+  input[type="text"].login, input[type="password"].login, input[type="email"].login,input[type="file"].login {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0 0 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input[type="submit"].login, input[type="reset"].login,  input[type="button"]{
+
+    background-color: teal;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: auto;
+    float: right;
+    margin-right: 18px;
+
+
+}
+#hiddenCandidate{
+    display:none;
+}
+#hiddenCompany{
+    display:none;
+}
+select.login{
+    width:95%;
+    padding: 12px 20px;
+    margin: 8px 0 0 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.content{
+	padding-top: 80px;
+}
+form.postJob {
+    box-sizing: border-box teal;
+    width: 47%;
+    margin: 70px 100px 100px 400px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 40px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+    display: inline-block;
+  }
+ #regImg{
+     display:'block';
+ }

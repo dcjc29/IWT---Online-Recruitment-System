@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Log In</title>
+<link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
+<link rel="stylesheet" type="text/css" href="CSS\Secondary.css">
+<script>
+    function submitForm(){
+        if(document.getElementById("accType").value =="jobSeeker"){
+			document.loginForm.action ="Candidate-menu.html";
+		}
+		if(document.getElementById("accType").value =="company"){
+			document.loginForm.action ="Company-menu.html";
+        }
+        if(document.getElementById("accType").value =="admin"){
+            document.loginForm.action ="Admin.html";
+           
+		}
+    }
+   
+</script>
+
+</head>
+
+<body>
+<div style="position: fixed; width: 100%;">	
+<header>
+<h1>Company Name</h1>
+
+</header>
+<hr>
+<nav>
+    <ul>
+            <li><a href="homepage.html" >Home</a></li>
+            <li><a href="jobs.html" >Jobs</a></li>
+            <li><a href="companies.html" >Companies</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+    </ul>    
+</nav>
+<hr>
+</div>
+<div class="content">
+<form name="loginForm" id="loginF" class="login">
+	<h1 class="login">Log In</h1>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Type<br>
+	<select id="accType" class="login">
+		<option value="jobSeeker">Job Seeker</option>
+		<option value="company">Company/Employee</option>
+		<option value="admin">Administrator</option>
+	</select>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username<br>
+	<input type="text" id="unametxt" name="unametxt" placeholder="Enter Username" class="login" required><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password<br>
+	<input type="password" id="passtxt" name="passtxt" placeholder="Enter Password" class="login" required><br>
+    <input type="submit" onclick="submitForm()" value="Login" class="login">&nbsp&nbsp;
+	<input type="reset" value="Reset" class="login">
+	<a href="ForgotPassword.html"><input type="button" value="Forgot Password" class="login"></a>
+	<h3>&nbsp;&nbsp;&nbsp;&nbsp;Don't have an account ? <a href="Registration.html">Register Now</a></h3>
+	
+</form>
+<div style="float: right; display: inline; margin-top: 150px; margin-right: 50px; height: 400px;width: 400px;">
+        <img src="src\login.png">
+        
+</div>
+    
+
+<div>
+<div class="footer">
+       
+        <div class="row">
+                <div class="flcolumn">
+                    <a href="AboutUs.html">About Us</a><br>
+                    <a href="ContactUs.html">Contact Us</a><br>
+                    <a href="Privacy.html">Privacy Policy</a><br>
+
+                </div>
+                <div style="width:50%;text-align:center;display: inline-block;">
+                    <p>+94-112220546 / 112220547</p>
+                    <a href="https://www.gmail.com"><p>hired@gmail.com</p></a><br>
+                    <p>copyright   2018</p>
+                </div>
+                <div class="frcolumn">
+                    <p>Get Social With Us</p>
+                    <a href="https://www.facebook.com"><img src="src\facebook.png" class="icons"></a>
+                    <a href="https://www.instagram.com"><img src="src\instagram.png" class="icons"></a>
+                    <a href="https://www.twitter.com"><img src="src\twitter.png" class="icons"></a>
+                    <a href="https://www.plus.google.com"><img src="src\googleplus.png" class="icons"></a>
+                    <a href="https://linkedin.com"><img src="src\linkedin.png" class="icons"></a>
+
+
+                </div>
+              </div>      
+
+</div>
+
+</body>
+
+</html>

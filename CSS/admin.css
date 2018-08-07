@@ -1,0 +1,306 @@
+li.menu{
+    border:solid 1px grey;
+    list-style: none;
+    padding: 10px 20px 20px 10px;
+    margin-top:10px;
+    text-align: center;
+    text-transform: uppercase;
+
+    
+}
+a.menu{
+    text-decoration: none;
+    color:black;
+}
+ul.menu{
+    width:57%;
+    padding-left: 250px;
+    
+}
+li.menu:hover{
+    border:solid 1px grey;
+    list-style: none;
+    padding: 10px 20px 20px 10px;
+    margin-top:10px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: teal;
+    transition: background-color 2s ease-out;
+}
+a.menu:hover{
+    text-decoration: none;
+    color:white;
+}
+h2{
+    margin-left: 20px;
+    text-align: center;
+    font-size: 50px;
+    color: teal;
+}
+div.details{
+    text-align: center;
+    border:solid 1px grey;
+    float: left;
+    width: 20%;
+    margin-left: 5px;
+   
+
+}
+img.details{
+    height: 200px;
+    width: 150px;
+}
+div.menu{
+    float:left;
+    width:50%;
+    align-content: center;
+}
+div.recent{
+    text-align: center;
+    border:solid 1px grey;
+    float: left;
+    width: 20%;
+    margin-left: 25px;
+}
+.content{
+    padding-top: 120px;
+}
+form.search {
+    box-sizing: border-box teal;
+    width: 80%;
+    margin: 50px 100px 100px 40px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 40px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+    display: inline-block;
+  
+}
+input[type="text"].search {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0 0 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input[type="reset"].search,  input[type="button"].search{
+
+    background-color: teal;
+    color: white;
+    padding: 14px 20px;
+    margin: 30px 20px 20px 18px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: auto;
+    float: right;
+}
+h3.search {
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    background-color: teal ;
+    color: white;
+    line-height: 150%;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+  }    
+ div.search{
+     border-right: solid 2px gray;
+     width: 35%;
+     height: 100%;
+     float: left;
+
+ }
+ div.message{
+    border-right: solid 2px gray;
+    width: 45%;
+    height: 100%;
+    float: left;
+}
+form.message {
+    box-sizing: border-box teal;
+    width: 80%;
+    margin: 50px 100px 100px 40px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 40px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+    float: left;
+} 
+h3.message,h3.message2 {
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    background-color: teal ;
+    color: white;
+    line-height: 150%;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+  }    
+  form.message2 {
+    box-sizing: border-box teal;
+    width: 80%;
+    margin: 35px 100px 100px 80px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 40px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+    display: inline-block;
+  }
+div.message2{
+    width: 50%;
+    height: 100%;
+    float: left;
+    margin-left:35px; 
+}    
+input[type="text"].message2 {
+    width: 50%;
+    padding: 8px 20px;
+    margin: 8px 0 0 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+textarea{
+    width: 95%;
+    padding: 40px 20px;
+    margin: 8px 0 0 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}        
+input[type="reset"].message2,  input[type="button"].message2{
+
+    background-color: teal;
+    color: white;
+    padding: 7px 20px;
+    margin: 20px 20px 20px 18px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: auto;
+    float: right;
+}
+
+div.passChange{
+    
+    width: 40%;
+    height: 100%;
+    margin:0 30% 0 30%; 
+}
+form.passChange {
+    box-sizing: border-box teal;
+    width: 80%;
+    margin: 35px 100px 100px 80px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 40px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+    display: inline-block;
+  }
+  input[type="reset"].passChange,  input[type="submit"].passChange{
+
+    background-color: teal;
+    color: white;
+    padding: 7px 20px;
+    margin: 8px 0 15px 50px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: 80%;
+    
+}
+input[type="text"].passChange {
+    width: 80%;
+    padding: 8px 20px;
+    margin: 8px 0 10px 50px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+div.addAdmin{
+    
+    width: 40%;
+    height: 100%;
+    margin:0 30% 0 30%; 
+}
+form.addAdmin {
+    box-sizing: border-box teal;
+    width: 80%;
+    margin: 35px 100px 100px 80px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 40px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+    display: inline-block;
+  }
+  input[type="reset"].addAdmin,  input[type="submit"].addAdmin{
+
+    background-color: teal;
+    color: white;
+    padding: 7px 20px;
+    margin: 8px 0 15px 50px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: 80%;
+    
+}
+input[type="text"].addAdmin {
+    width: 80%;
+    padding: 8px 20px;
+    margin: 8px 0 10px 50px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+div.adminCompany{
+    width:60%;
+    float: left;
+}
+table.adminCompany{
+    width: 100%;
+    margin-left: 25px;
+}
+td{
+    font-size: 20px;
+    text-align:center;
+    border: solid 1px grey;
+}
+img.dec{
+    width:100px;
+    height: 50px;
+    
+}
+th{
+  
+      width:25%;
+     
+     
+  
+}
+input[type="button"].adminCompany,input[type="button"].adminCandidate,input[type="button"].details{
+
+  background-color: teal;
+  color: white;
+  padding: 7px 20px;
+  margin: 4px 0 5px 10px;
+  border:1px solid rgb(0, 3, 3);
+  border-radius: 2px 2px 2px 2px;
+  cursor: pointer;
+  width: 85%;
+  
+}
+div.adminCandidate{
+    width:60%;
+    float: left;
+}
+table.adminCandidate{
+    width: 100%;
+    margin-left: 25px;
+}

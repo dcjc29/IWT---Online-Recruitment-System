@@ -1,0 +1,220 @@
+li.menu{
+    border:solid 1px grey;
+    list-style: none;
+    padding: 10px 20px 20px 10px;
+    margin-top:15px;
+    text-align: center;
+    text-transform: uppercase;
+
+    
+}
+a.menu{
+    text-decoration: none;
+    color:black;
+}
+ul.menu{
+    width:57%;
+    padding-left: 250px;
+    
+}
+li.menu:hover{
+    border:solid 1px grey;
+    list-style: none;
+    padding: 10px 20px 20px 10px;
+    margin-top:10px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: teal;
+    transition: background-color 2s ease-out;
+}
+a.menu:hover{
+    text-decoration: none;
+    color:white;
+}
+h2{
+    margin-left: 20px;
+    text-align: center;
+    font-size: 50px;
+    color: teal;
+	padding-top: 0px;
+}
+div.details{
+    text-align: center;
+    border:solid 1px grey;
+    float: left;
+    width: 20%;
+    margin-left: 5px;
+   
+
+}
+img.details{
+    height: 200px;
+    width: 150px;
+}
+div.menu{
+    float:left;
+    width:50%;
+    align-content: center;
+}
+div.recent{
+    text-align: center;
+    border:solid 1px grey;
+    float: left;
+    width: 20%;
+    margin-left: 25px;
+}
+.content{
+	padding-top: 25px;
+}
+form.companyAdmin {
+    box-sizing: border-box teal;
+    width: 80%;
+    margin: 130px 100px 100px 420px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 40px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+    display: inline-block;
+  }
+div.companyAdmin{
+    width: 50%;
+    height: 100%;
+    float: left;
+    margin-left:35px; 
+}    
+input[type="text"].companyAdmin {
+    width: 50%;
+    padding: 8px 20px;
+    margin: 8px 0 0 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+textarea.companyAdmin{
+    width: 95%;
+    padding: 40px 20px;
+    margin: 8px 0 0 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}        
+input[type="reset"].companyAdmin,  input[type="button"].companyAdmin{
+
+    background-color: teal;
+    color: white;
+    padding: 7px 20px;
+    margin: 20px 20px 20px 18px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: auto;
+    float: right;
+}
+h3.companyAdmin{
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    background-color: teal ;
+    color: white;
+    line-height: 150%;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+}
+.contentComUpdate{
+	padding-top: 120px;
+}
+div.updateLeft{
+    width: 45%;
+    border-right: solid 2px gray;
+    float:left;
+    height: 400px;
+}
+div.updateRight{
+    width: 45%;
+    float: left;
+    height: 400px;
+}
+form.updateInfo{
+    box-sizing: border-box teal;
+    width: 90%;
+    margin: 50px 100px 100px 40px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 100px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+}    
+form.passChange{
+    box-sizing: border-box teal;
+    width: 80%;
+    margin: 50px 100px 100px 140px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 100px;
+    border-radius: 8px 8px 8px 8px;
+    background-color:rgba(128, 128, 128, 0.329);
+    display: inline-block;
+}    
+input[type="reset"].passChange,  input[type="submit"].passChange{
+
+    background-color: teal;
+    color: white;
+    padding: 7px 20px;
+    margin: 8px 0 15px 50px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: 80%;
+    
+}
+input[type="text"].passChange {
+    width: 80%;
+    padding: 8px 20px;
+    margin: 8px 0 10px 50px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+h3.passChange {
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    background-color: teal ;
+    color: white;
+    line-height: 150%;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+  } 
+  table.postedJobs{
+      width: 90%;
+      align-content: center;
+  }
+  td{
+      font-size: 20px;
+      text-align:center;
+      border: solid 1px grey;
+  }
+  img.dec{
+      width:100px;
+      height: 50px;
+      
+  }
+  th{
+    
+        width:25%;
+       
+       
+    
+  }
+  input[type="button"].postedJobs,input[type="button"].details{
+
+    background-color: teal;
+    color: white;
+    padding: 7px 20px;
+    margin: 4px 0 5px 10px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: 85%;
+    
+}
