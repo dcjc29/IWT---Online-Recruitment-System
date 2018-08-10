@@ -8,8 +8,14 @@
         function adminPassValidate (){
         var newpass = document.getElementById('newpass').value;
         var conpass = document.getElementById('conpass').value;
+        var oldpass = document.getElementById('oldpass').value;
 
-        if(newpass != conpass)
+        if(newpass=="" || conpass=="" || oldpass=="")
+        {
+                alert("Fields Cannot Be Blank");
+                return false;
+        }
+        else if(newpass != conpass)
         {
                 alert("New Password Doesn't match.Try Again");
                 return false;
@@ -36,7 +42,7 @@
 <div class="passChange">
         <form class="passChange" onsubmit="return adminPassValidate()" method="post">
                 <h3 class="search">Admin Account</h3><br>
-                <input type="text" class="passChange" placeholder="Enter Old Password"><br>
+                <input type="text" class="passChange" placeholder="Enter Old Password" id="oldpass"><br>
                 <input type="text" class="passChange" placeholder="Enter New Password" id ="newpass"><br>
                 <input type="text" class="passChange" placeholder="Confirm New Password" id="conpass"><br>
                 <input type="submit" class="passChange" value="Change Now"><br>

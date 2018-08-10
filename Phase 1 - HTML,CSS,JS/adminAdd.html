@@ -4,6 +4,34 @@
 <title>Admin Page</title>
 <link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
 <link rel="stylesheet" type="text/css" href="CSS\admin.css">
+<script>
+        function adminAddValidate (){
+        var oldpass = document.getElementById('oldpass').value;
+        var newUname = document.getElementById('newUname').value;
+        var newPass = document.getElementById('newPass').value;
+        var newPassCon = document.getElementById('newPassCon').value;
+
+
+        if(oldpass=="" || newUname=="" || newPass=="" || newPassCon =="" )
+        {
+                alert("Fields Cannot Be Blank");
+                return false;
+        }
+        else if(newPass != newPassCon)
+        {
+                alert("New Password Doesn't match.Try Again");
+                return false;
+        }
+        else{
+                alert("Admin Added Successfully");
+                return true;
+        }
+        }  
+
+</script>
+<script>
+
+</script>
 </head>
 
 <body>
@@ -18,12 +46,12 @@
 <div class="content"></div>
 <h2>Administrator Account Manager</h2>  
 <div class="addAdmin">
-        <form class="addAdmin">
+        <form class="addAdmin" onsubmit=" return adminAddValidate();" method="POST">
                 <h3 class="search">Add An Administrator</h3><br>
-                <input type="text" class="addAdmin" placeholder="Enter Your Password"><br>
-                <input type="text" class="addAdmin" placeholder="Enter New Administartor Username"><br>
-                <input type="text" class="addAdmin" placeholder="Enter New Administartor password"><br>
-                <input type="text" class="addAdmin" placeholder="Confirm New Administartor password"><br>
+                <input type="text" class="addAdmin" placeholder="Enter Your Password" id="oldpass"><br>
+                <input type="text" class="addAdmin" placeholder="Enter New Administartor Username" id="newUname"><br>
+                <input type="text" class="addAdmin" placeholder="Enter New Administartor password" id="newPass"><br>
+                <input type="text" class="addAdmin" placeholder="Confirm New Administartor password" id="newPassCon"><br>
                 <input type="submit" class="addAdmin" value="Add Administrator"><br>
                 <input type="reset" class="addAdmin" value="Reset"><br>
                 </form>
