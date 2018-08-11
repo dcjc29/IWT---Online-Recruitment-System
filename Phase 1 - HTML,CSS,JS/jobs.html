@@ -11,8 +11,12 @@
         if(searchV == "")
         {
             alert("Job Title Field Must Be Filled");
-            return false;        }
-
+            return false;        
+        }
+        else{  
+            return true; 
+          
+        }
     }
 </script>
 <body>
@@ -34,7 +38,7 @@
 <div class="content"></div>
 
 <center><h2 class="search"><img src="src\search.png" align="middle" class="search">JOBS</h2></center>
-<form name="search_form" class="jobSearch" onsubmit="searchValidate()" action="jobsSearched.html">
+<form name="search_form" class="jobSearch" onsubmit="return searchValidate()" action="jobsSearched.html">
     <div id="jobCategory">
         <label class="jobSearch">Select Job Category</label>:<br>
         <select id="categoryOptions">
