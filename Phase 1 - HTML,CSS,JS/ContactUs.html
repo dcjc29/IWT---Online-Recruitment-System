@@ -4,6 +4,28 @@
 <title>Contact Us</title>
 <link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
 <link rel="stylesheet" type="text/css" href="CSS\Other.css">
+<script>
+    function contactValidate(){
+    var msg=document.getElementById('msgTxt').value;
+    var name=document.getElementById('nameTxt').value;
+    var mail=document.getElementById('mailTxt').value;
+
+    if(msg == ""){
+        alert("Message Field Cannot Be Blank");
+        return false;
+    }
+    if(name == ""){
+        alert("Enter Name");
+        return false;
+    }
+    if(mail == ""){
+        alert("Enter E-mail");
+        return false;
+    }
+
+}
+
+</script>
 </head>
 
 <body>
@@ -43,13 +65,13 @@
     </div>
     
     <div class="contactContent2">
-            <form class="contactUsF" name="form_contactUs">
+            <form class="contactUsF" name="form_contactUs" onsubmit="return contactValidate()">
                     <h3 class="contactUsF">Send US A Message</h3><br>
-                    <input type="text" class="contactUsF" placeholder="Enter Name">
-                    <input type="text" class="contactUsF" placeholder="Enter E-mail">
-                    <input type="text" class="contactUsF" placeholder="Enter Telephone Number">
-                    <textarea placeholder="Input Your Message" class="contactUsF"></textarea><br>
-                    <input type="button" class="contactUsF" value="Send">
+                    <input id="nameTxt" type="text" class="contactUsF" placeholder="Enter Name">
+                    <input id="mailTxt" type="email" class="contactUsF" placeholder="Enter E-mail">
+                    <input id="teleTxt" type="text" class="contactUsF" placeholder="Enter Telephone Number">
+                    <textarea id="msgTxt" placeholder="Input Your Message" class="contactUsF"></textarea><br>
+                    <input type="submit" class="contactUsF" value="Send">
                     <input type="reset" class="contactUsF" value="Reset">
     </div>
 

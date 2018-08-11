@@ -4,14 +4,28 @@
 <title>Admin-Company</title>
 <link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
 <link rel="stylesheet" type="text/css" href="CSS\admin.css">
-<link rel="stylesheet" type="text/css" href="CSS\modal&forms.css">
+<link rel="stylesheet" type="text/css" href="CSS\modalforms.css">
 
-<script>
-    function modal() {
-        document.getElementById("confirmModal").style.display = "block";
-        document.getElementById("content_Modal").style.display = "block";
+<script type="text/javascript">
+    function modal(){
+    document.getElementById('button').addEventListener('click', open())
+
+document.getElementsByClassName('.close').addEventListener('click', close())
+function open()
+{
+
+    document.getElementsByClassName('.modal').style.display = 'flex';
 }
+function close()
+{
 
+    document.getElementsByClassName('.contenModal').style.display = 'none';
+
+}
+}
+function goBack(){
+    window.history.back();
+}
 </script>    
 </head>
 
@@ -24,64 +38,67 @@
         <hr>
         </div>
 <div class="content">
+       
 <h2>Company List</h2>
+<img id = "back" onclick="goBack()" src = "src\back.png">
 <div class="search">
+        
     <form class="search">
     <h3 class="search">Search Console</h3><br>
-    <input type="text" class="search" placeholder="Enter Company Name">
-    <input type="button"  value="Search" class="search">
+    <input type="text" class="search" placeholder="Enter Company Name" required>
+    <input type="submit"  value="Search" class="search">
     <input type="reset"  value="Reset" class="search">
     </form>
 </div>
-<div class=adminCompany>
+<div class="adminCompany">
         <table class="adminCompany">
                 <tr>
+                    <th>Company ID</th>
                     <th>Company Logo</th>
                     <th>Company Name</th>
-                    <th>Company ID</th>
                     <th>E-mail</th>
                     <th>Telephone Number</th>
                     <th>Options</th>
                 </tr>
                 <tr>
+                    <td>Com1</td>
                     <td><img src="src\dialog.jpg" class="dec"></td>
                     <td>Dialog Axiata</td>
-                    <td>Com1</td>
                     <td>dialog@gmail.com</td>
                     <td>0112869411</td>
-                    <td><input type="button" value="Delete Company"  class="adminCompany" onClick="modal()"></td>
+                    <td><input type="button" value="Delete Company"  class="adminCompany" onClick="modal()" id="button"></td>
                 </tr>
                 <tr>
+                    <td>Com2</td>
                     <td><img src="src\hayleys.jpg" class="dec"></td>
                     <td>Hayleys</td>
-                    <td>Com2</td>
                     <td>hayleys@gmail.com</td>
                     <td>0112869411</td>
-                    <td><input type="button" value="Delete Company"  class="adminCompany"></td>
+                    <td><input type="button" value="Delete Company"  class="adminCompany" onClick="modal()"></td>
                   
                 </tr>
                 <tr>
+                    <td>Com3</td>
                     <td><img src="src\slt.jpg" class="dec"></td>
                     <td>Sri Lanka Telecom</td>
-                    <td>Com3</td>
                     <td>slt@gmail.com</td>
                     <td>0112869411</td>
-                    <td><input type="button" value="Delete Company"  class="adminCompany"></td>
+                    <td><input type="button" value="Delete Company"  class="adminCompany" onClick="modal()"></td>
                    
                 </tr>
                 <tr>
+                        <td>Com4</td>
                         <td><img src="src\Nawaloka-Hospitals.jpg" class="dec"></td>
                         <td>Navaloka Hospital</td>
-                        <td>Com4</td>
                         <td>nawalokah@gmail.com</td>
                         <td>0112869411</td>
-                        <td><input type="button" value="Delete Company"  class="adminCompany"></td>
+                        <td><input type="button" value="Delete Company"  class="adminCompany" onClick="modal()"></td>
                        
                     </tr>
             </table>
             <div id="confirmModal" class="modal">
                     <div id="content_Modal" class="contentModal">
-                       <hr> 
+                        <span class="close">&times;</span>
                       <h2 class="modal">Are You Sure You Want To Delete Company?</h2>
                       <input type="button" class="modal" value="Yes">
                       <input type="button" class="modal" value="No">

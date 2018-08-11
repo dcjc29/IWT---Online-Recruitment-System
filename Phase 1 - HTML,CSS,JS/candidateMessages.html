@@ -4,6 +4,11 @@
 <title>Home Page</title>
 <link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
 <link rel="stylesheet" type="text/css" href="CSS\admin.css">
+<script>
+        function goBack(){
+        window.history.back();
+    }
+    </script>
 </head>
 
 <body>
@@ -33,12 +38,14 @@
 <div class="content">
         <h2>Candidate Messages</h2>
         <div class="message">
+                <img id = "back" onclick="goBack()" src = "src\back.png">
             <form class="message">
             <h3 class="message">Messages</h3><br>
             </form>
         </div>
          
         <div class="message2">
+                
                 <form class="message2">
                     <h3 class="message2">Send A Message</h3><br>
                     <input type="text" class="message2" placeholder="Enter Username">

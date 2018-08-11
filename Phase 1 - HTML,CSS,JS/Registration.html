@@ -22,6 +22,25 @@
 		}
 
 	}
+	function confirmPass(){
+	var x = document.forms["regForm"]["password"].value;
+	var y = document.forms["regForm"]["Cpassword"].value;
+	
+	if(x != y){
+		alert("password confirm failed");
+		return false;
+	}
+}
+
+function confirmmail(){
+	var k = document.forms["regForm"]["email"].value;
+	var l = document.forms["regForm"]["Cemail"].value;
+	
+	if(k != l){
+		alert("email confirm failed");
+		return false;
+	}
+}
 	
 	</script>
 </head>
@@ -42,7 +61,7 @@
 </nav>
 <hr>
 <div>	
-<form  class="login" action="">
+<form name="regForm" class="login" action="" onsubmit="return confirmPass(),confirmmail()">
 		<h1 class="login">Registration</h1>	
 	&nbsp;&nbsp;&nbsp;&nbsp;Account Type : 
 		<select id ="selection"class="login" name="atype" onChange="regSelection()">
@@ -60,7 +79,7 @@
 	&nbsp;&nbsp;&nbsp;&nbsp;Email :
 		<input type="email" name="email" class="login" required><br/><br/>
 	&nbsp;&nbsp;&nbsp;&nbsp;Confirm Email :
-		<input type="email" name="email" class="login" required><br/><br/>
+		<input type="email" name="Cemail" class="login" required><br/><br/>
 	&nbsp;&nbsp;&nbsp;&nbsp;Choose A Profile Picture :	
 		<input type="file" name="ProfilePic" accept="image/*"><br><br>
 	&nbsp;&nbsp;&nbsp;&nbsp;Import CV :	
@@ -92,7 +111,7 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;Email :
 				<input type="email" name="email" class="login" required><br/><br/>
 			&nbsp;&nbsp;&nbsp;&nbsp;Confirm Email :
-				<input type="email" name="email" class="login" required><br/><br/>
+				<input type="email" name="cemail" class="login" required><br/><br/>
 			&nbsp;&nbsp;&nbsp;&nbsp;Choose Company Logo :		
 				<input type="file" name="cLogo" accept="image/*"><br><br>
 			<fieldset>

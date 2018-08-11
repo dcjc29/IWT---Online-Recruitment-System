@@ -4,7 +4,17 @@
 <title>Job Search</title>
 <link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
 <link rel="stylesheet" type="text/css" href="CSS\jobs.css">
+<script>
+    function searchValidate(){
+        var searchV = document.getElementById('titleText').value;
 
+        if(searchV == "")
+        {
+            alert("Job Title Field Must Be Filled");
+            return false;        }
+
+    }
+</script>
 <body>
 
 <header>
@@ -24,7 +34,7 @@
 <div class="content"></div>
 
 <center><h2 class="search"><img src="src\search.png" align="middle" class="search">JOBS</h2></center>
-<form name="search_form" class="jobSearch">
+<form name="search_form" class="jobSearch" onsubmit="searchValidate()" action="jobsSearched.html">
     <div id="jobCategory">
         <label class="jobSearch">Select Job Category</label>:<br>
         <select id="categoryOptions">
@@ -35,7 +45,7 @@
         </select>
     </div>
     <div id="jobTitle">
-        <input type="text" id="titleText" placeholder="Enter Job Title(Ex:-Software Engineer)" required><br><br>
+        <input type="text" id="titleText" placeholder="Enter Job Title(Ex:-Software Engineer)" ><br><br>
     </div>
    
     <div id="searchButtons">   

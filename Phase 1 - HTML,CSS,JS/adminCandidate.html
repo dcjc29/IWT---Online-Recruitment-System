@@ -4,6 +4,11 @@
 <title>Admin-Candidate</title>
 <link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
 <link rel="stylesheet" type="text/css" href="CSS\admin.css">
+<script>
+    function goBack(){
+    window.history.back();
+}
+</script>
 </head>
 
 <body>
@@ -15,55 +20,57 @@
         <hr>
         </div>
 <div class="content"></div>
+
 <h2>Candidate List</h2>
+<img id = "back" onclick="goBack()" src = "src\back.png">
 <div class="search">
-    <form class="search">
+    <form class="search"  action="">
     <h3 class="search">Search Console</h3><br>
-    <input type="text" class="search" placeholder="Enter Candidate Name">
-    <input type="button"  value="Search" class="search">
+    <input id="searchTxt" type="text" class="search" placeholder="Enter Candidate Name" required>
+    <input type="submit"  value="Search" class="search">
     <input type="reset"  value="Reset" class="search">
     </form>
 </div>
-<div class=adminCandidate>
+<div class="adminCandidate">
         <table class="adminCandidate">
                 <tr>
+                    <th>Candidate ID</th>
                     <th>Candidate Image</th>
                     <th>Candidate Name</th>
-                    <th>Candidate ID</th>
                     <th>E-mail</th>
                     <th>Telephone Number</th>
                     <th>Options</th>
                 </tr>
                 <tr>
+                    <td>Can1</td>
                     <td><img src="src\img_507320.png" class="dec"></td>
                     <td>Suranga</td>
-                    <td>Can1</td>
                     <td>suranga@gmail.com</td>
                     <td>0112869411</td>
                     <td><input type="button" value="Delete Candidate"  class="adminCompany"></td>
                 </tr>
                 <tr>
+                    <td>Can2</td>
                     <td><img src="src\img_507320.png" class="dec"></td>
                     <td>Sadeepa</td>
-                    <td>Can2</td>
                     <td>sadeepa@gmail.com</td>
                     <td>0112869411</td>
                     <td><input type="button" value="Delete Candidate"  class="adminCompany"></td>
                   
                 </tr>
                 <tr>
+                    <td>Can3</td>
                     <td><img src="src\img_507320.png" class="dec"></td>
                     <td>Heshan</td>
-                    <td>Can3</td>
                     <td>heshan@gmail.com</td>
                     <td>0112869411</td>
                     <td><input type="button" value="Delete Candidate"  class="adminCompany"></td>
                    
                 </tr>
                 <tr>
+                        <td>Can4</td>
                         <td><img src="src\img_507320.png" class="dec"></td>
                         <td>Chamod</td>
-                        <td>Can4</td>
                         <td>chamod@gmail.com</td>
                         <td>0112869411</td>
                         <td><input type="button" value="Delete Candidate"  class="adminCompany"></td>

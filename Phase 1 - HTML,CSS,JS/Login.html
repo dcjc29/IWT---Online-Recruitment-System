@@ -4,7 +4,20 @@
 <title>Log In</title>
 <link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
 <link rel="stylesheet" type="text/css" href="CSS\Secondary.css">
-<script>
+<script type="text/javascript">
+
+/*function validateLogin(){
+    var uname = document.forms["loginForm"]["unametxt"].value;
+    var pass = documnet.forms["loginForm"]["passtxt"].value;
+
+    if(uname == "" || pass == ""){
+        alert("Both Fields Should Be Filled");
+        return false;
+    } 
+    else    
+        return true;   
+
+}*/
     function submitForm(){
         if(document.getElementById("accType").value =="jobSeeker"){
 			document.loginForm.action ="Candidate-menu.html";
@@ -14,9 +27,9 @@
         }
         if(document.getElementById("accType").value =="admin"){
             document.loginForm.action ="Admin.html";
-           
 		}
     }
+    
    
 </script>
 
@@ -41,7 +54,7 @@
 <hr>
 </div>
 <div class="content">
-<form name="loginForm" id="loginF" class="login">
+<form name="loginForm" id="loginF" class="login" onsubmit="return validateLogin()" method="post">
 	<h1 class="login">Log In</h1>
 	<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Type<br>
@@ -54,9 +67,9 @@
 	<input type="text" id="unametxt" name="unametxt" placeholder="Enter Username" class="login" required><br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password<br>
 	<input type="password" id="passtxt" name="passtxt" placeholder="Enter Password" class="login" required><br>
-    <input type="submit" onclick="submitForm()" value="Login" class="login">&nbsp&nbsp;
+    <input type="submit" onclick="submitForm();" value="Login" class="login">&nbsp&nbsp;
 	<input type="reset" value="Reset" class="login">
-	<a href="ForgotPassword.html"><input type="button" value="Forgot Password" class="login"></a>
+	<a ><input type="button" value="Forgot Password" class="login"></a>
 	<h3>&nbsp;&nbsp;&nbsp;&nbsp;Don't have an account ? <a href="Registration.html">Register Now</a></h3>
 	
 </form>

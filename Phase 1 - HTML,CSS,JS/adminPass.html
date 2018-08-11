@@ -25,6 +25,9 @@
                 return true;
         }
         }  
+        function goBack(){
+    window.history.back();
+}
 </script>  
 </head>
 
@@ -38,13 +41,15 @@
         <hr>
         </div>
 <div class="content"></div>
-<h2>Administrator Password Manager</h2>  
+
+<h2>Administrator Password Manager</h2>
+<img id = "back" onclick="goBack()" src = "src\back.png">
 <div class="passChange">
         <form class="passChange" onsubmit="return adminPassValidate()" method="post">
                 <h3 class="search">Admin Account</h3><br>
                 <input type="text" class="passChange" placeholder="Enter Old Password" id="oldpass"><br>
-                <input type="text" class="passChange" placeholder="Enter New Password" id ="newpass"><br>
-                <input type="text" class="passChange" placeholder="Confirm New Password" id="conpass"><br>
+                <input type="password" class="passChange" placeholder="Enter New Password" id ="newpass"><br>
+                <input type="password" class="passChange" placeholder="Confirm New Password" id="conpass"><br>
                 <input type="submit" class="passChange" value="Change Now"><br>
                 <input type="reset" class="passChange" value="Reset"><br>
                 </form>

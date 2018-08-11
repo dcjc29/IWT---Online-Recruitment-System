@@ -5,7 +5,11 @@
 <link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
 <link rel="stylesheet" type="text/css" href="CSS\Company.css">
 
-
+<script>
+        function goBack(){
+        window.history.back();
+    }
+    </script>
 </head>
 
 <body>
@@ -32,7 +36,9 @@
 </div>
 <hr>
 </div>
-<div class="content"></div>
+
+<div class="content">
+        <img id = "back" onclick="goBack()" src = "src\back.png" style="margin-top: 100px;">
 <div class="companyAdmin">
         <form class="companyAdmin">
             <h3 class="companyAdmin">Send A Message</h3><br>
@@ -41,7 +47,7 @@
             <input type="button" class="companyAdmin" value="Send">
             <input type="reset" class="companyAdmin" value="Reset">
         </form>
-
+        
 </div>
 
    
