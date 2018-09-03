@@ -19,9 +19,9 @@
 <a href="adminMenu.php"><img id = "back" src = "src\back.png"></a>
 <div class="search">
         
-    <form class="search" method="GET">
+    <form class="search" method="post">
     <h3 class="search">Search Console</h3><br>
-    <input type="text" class="search" placeholder="Enter Company Name" name="passTxt" required>
+    <input type="text" class="search" placeholder="Enter Company Name" name="searchTxt" required>
     <input type="submit" value="Search" class="search" name="search">
     <input type="reset"  value="Reset" class="search">
     </form>
@@ -31,6 +31,12 @@
 </div>
 <div class="adminCompany">
         <table class="adminCompany">
+        <col width="5%">
+        <col width="15%">
+        <col width="20%">
+        <col width="20%">
+        <col width="20%">
+        <col width="20%">
                 <tr>
                     <th>Company ID</th>
                     <th>Company Logo</th>
@@ -41,10 +47,9 @@
                 </tr>
             <?php
                 if(isset($_POST['view'])){
-                
                             $query = "SELECT * FROM company";
-                            $result = mysqli_query($con,$query);
-                            while($rows = mysqli_fetch_assoc($result)){
+                            $results = mysqli_query($con,$query);
+                            while($rows = mysqli_fetch_assoc($results)){
             ?>
               <tr>
                   <td><?php echo $rows['comID'];?></td>
@@ -52,19 +57,22 @@
                   <td><?php echo $rows['comName'];?></td>
                   <td><?php echo $rows['comMail'];?></td>
                   <td><?php echo $rows['comTel'];?></td>
-                  <td><?php echo "<input type='button' value='Delete Company'  class='adminCompany'>" ?></td>
+                  <td><?php echo "<input type='button' value='Delete Company'  class='adminCompanyDel'>" ?></td>
                  
               </tr>
       <?php  
             }
-         }
+
+         }       
        ?> 
         <?php
-                if(isset($_GET['search'])){
-                
-                    $passText = $_GET['passTxt'];
-                    $query = "SELECT * FROM company WHERE comName LIKE '%" .$passText. "%'";
+                if(isset($_POST['search'])){
+                    $comNameText = $_POST['searchTxt'];
+                    $query = "SELECT * FROM company WHERE comName LIKE '%" .$comNameText. "%'";
                     $result = mysqli_query($con,$query);
+                    if(mysqli_num_rows($result) == 0){
+                        echo "<p class='noResult'>No Records Found!!!,Try Another Keyword.</p>";
+                    }
               	    while($rows = mysqli_fetch_assoc($result)){
             ?>
               <tr>
@@ -73,11 +81,11 @@
                   <td><?php echo $rows['comName'];?></td>
                   <td><?php echo $rows['comMail'];?></td>
                   <td><?php echo $rows['comTel'];?></td>
-                  <td><?php echo "<input type='button' value='Delete Company'  class='adminCompany' id='button'>" ?></td>
-                 
+                  <td><?php echo "<input type='button' value='Delete Company'  class='adminCompanyDel' id='button'>" ?></td>   
               </tr>
       <?php  
             }
+            
          }
        ?> 
                
@@ -87,7 +95,7 @@
  
 
 </div>
-<div id="footer">
+<div id="footerAdmin">
        
        
                
