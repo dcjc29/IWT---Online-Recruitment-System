@@ -31,9 +31,7 @@
                 return true;
         }
         }  
-        function goBack(){
-    window.history.back();
-}
+        
 </script>
 
 </head>
@@ -44,7 +42,7 @@
     ?>
 <div class="content"></div>
 <h2>Administrator Account Manager</h2>
-<img id = "back" onclick="goBack()" src = "src\back.png">
+<a href="adminMenu.php"><img id = "back" src = "src\back.png"></a>
 <div class="addAdmin">
         <form class="addAdmin" onsubmit=" return adminAddValidate();" action = "adminAdded.php" method="POST">
                 <h3 class="search">Add An Administrator</h3><br>
@@ -57,10 +55,9 @@
                 </form>
 </div>
 
-<?php
-        include "adminFooter.php";
-?>
+<div class="footerAdmin">
 
+</div>
 </body>
 
 </html>

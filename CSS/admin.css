@@ -129,8 +129,8 @@ h3.search {
 }
 form.message {
     box-sizing: border-box teal;
-    width: 80%;
-    margin: 50px 100px 100px 40px;
+    width: 95%;
+    margin: 50px 100px 100px 15px;
     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
     padding-bottom: 40px;
     border-radius: 8px 8px 8px 8px;
@@ -316,9 +316,52 @@ div.adminCandidate{
     overflow:visible;
 }
 table.adminCandidate{
-    width: 90%;
+    width: 95%;
     margin-left: 25px;
 }
 .contentJobs{
     padding-top: 500px;
+}
+input[type="button"].message{
+
+    background-color: teal;
+    color: white;
+    padding: 7px 20px;
+    margin: 5px 20px 5px 18px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: 100px;
+    float: right;
+}
+input[type="button"].messageDel{
+
+    background-color: rgb(168, 0, 0);
+    color: white;
+    padding: 7px 20px;
+    margin: 5px 20px 5px 18px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: 100px;
+    float: right;
+}
+input[type="button"].adminCompanyDel{
+
+    background-color: rgb(168, 0, 0);
+    color: white;
+    padding: 7px 20px;
+    margin: 5px 20px 5px 18px;
+    border:1px solid rgb(0, 3, 3);
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    width: auto;
+    float: right;
+}
+p.noResult{
+
+    text-align: center;
+    color:red;
+    font-size: 25px;
+    
 }
