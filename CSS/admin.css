@@ -36,6 +36,7 @@ h2{
     text-align: center;
     font-size: 50px;
     color: teal;
+    
 }
 div.details{
     text-align: center;
@@ -64,16 +65,21 @@ div.recent{
 }
 .content{
     padding-top: 120px;
+    overflow: hidden;
+}
+.contentMsg{
+    padding-top: 120px;
+    overflow: hidden;
 }
 form.search {
     box-sizing: border-box teal;
     width: 80%;
-    margin: 50px 100px 100px 40px;
+    margin: 50px 100px 20px 50px;
     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
-    padding-bottom: 40px;
     border-radius: 8px 8px 8px 8px;
     background-color:rgba(128, 128, 128, 0.329);
     display: inline-block;
+    clear: left;
   
 }
 input[type="text"].search {
@@ -84,18 +90,19 @@ input[type="text"].search {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-input[type="reset"].search,  input[type="button"].search{
+input[type="reset"].search,  input[type="submit"].search{
 
-    background-color: teal;
-    color: white;
-    padding: 14px 20px;
-    margin: 30px 20px 20px 18px;
-    border:1px solid rgb(0, 3, 3);
-    border-radius: 2px 2px 2px 2px;
-    cursor: pointer;
-    width: auto;
-    float: right;
+    background-color: teal !important;
+    color: white !important;
+    padding: 14px 20px !important;
+    margin: 30px 20px 20px 18px !important;
+    border:1px solid rgb(0, 3, 3) !important;
+    border-radius: 2px 2px 2px 2px !important;
+    cursor: pointer !important;
+    width: auto !important;
+    float: right !important;
 }
+
 h3.search {
     height: 60px;
     width: 100%;
@@ -110,8 +117,8 @@ h3.search {
  div.search{
      border-right: solid 2px gray;
      width: 35%;
-     height: 100%;
      float: left;
+     clear: left;
 
  }
  div.message{
@@ -150,6 +157,7 @@ h3.message,h3.message2 {
     border-radius: 8px 8px 8px 8px;
     background-color:rgba(128, 128, 128, 0.329);
     display: inline-block;
+    
   }
 div.message2{
     width: 50%;
@@ -214,7 +222,7 @@ form.passChange {
     width: 80%;
     
 }
-input[type="text"].passChange {
+input[type="text"].passChange,input[type="password"].passChange {
     width: 80%;
     padding: 8px 20px;
     margin: 8px 0 10px 50px;
@@ -262,10 +270,11 @@ input[type="text"].addAdmin {
 div.adminCompany{
     width:60%;
     float: left;
+    overflow:auto;
 }
 table.adminCompany{
-    width: 100%;
-    margin-left: 25px;
+    width: 96%;
+    margin-left: 30px;
 }
 td{
     font-size: 20px;
@@ -273,13 +282,18 @@ td{
     border: solid 1px grey;
 }
 img.dec{
+    width:150px;
+    height: 200px;
+    
+}
+img.dec2{
     width:100px;
-    height: 50px;
+    height: 80px;
     
 }
 th{
   
-      width:25%;
+      width:20%;
      
      
   
@@ -299,8 +313,12 @@ input[type="button"].adminCompany,input[type="button"].adminCandidate,input[type
 div.adminCandidate{
     width:60%;
     float: left;
+    overflow:visible;
 }
 table.adminCandidate{
-    width: 100%;
+    width: 90%;
     margin-left: 25px;
+}
+.contentJobs{
+    padding-top: 500px;
 }
