@@ -1,5 +1,6 @@
 <?php
     require "dbConnection.php";
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +19,7 @@
 <h2>Job Seekers List</h2>
 <a href="adminMenu.php"><img id = "back" src = "src\back.png"></a>
 <div class="search">
-    <form class="search"  action="" method="get">
+    <form class="search"  action="" method="post">
     <h3 class="search">Search Console</h3><br>
     <input id="searchTxt" type="text" class="search" placeholder="Enter Candidate Name" name="seekerName"required>
     <input type="submit"  value="Search" class="search" name="search">
@@ -30,6 +31,12 @@
 </div>
 <div class="adminCandidate">
         <table class="adminCandidate">
+        <col width="5%">
+        <col width="15%">
+        <col width="20%">
+        <col width="20%">
+        <col width="20%">
+        <col width="20%">
         <tr>
                     <th>Job Seeker ID</th>
                     <th>Personal Image</th>
@@ -51,7 +58,7 @@
                   <td><?php echo $rows['jobSeekerName'];?></td>
                   <td><?php echo $rows['jobSeekerMail'];?></td>
                   <td><?php echo $rows['jobSeekerTel'];?></td>
-                  <td><?php echo "<input type='button' value='Delete Job Seeker'  class='adminCompany'>" ?></td>
+                  <td><?php echo "<input type='button' value='Delete Job Seeker'  class='adminCompanyDel'>" ?></td>
                  
               </tr>
       <?php  
@@ -59,33 +66,37 @@
          }
        ?> 
         <?php
-                if(isset($_GET['search'])){
+                if(isset($_POST['search'])){
                 
-                    $nameText = $_GET['seekerName'];
+                    $nameText = $_POST['seekerName'];
                     $query = "SELECT * FROM jobseeker WHERE jobSeekerName LIKE '%" .$nameText. "%'";
                     $result = mysqli_query($con,$query);
+                    if(mysqli_num_rows($result) == 0){
+                        echo "<p class='noResult'>No Records Found!!!,Try Another Keyword.</p>";
+                    }
               	    while($rows = mysqli_fetch_assoc($result)){
             ?>
-              <tr>
+              <tr>    
               <td><?php echo $rows['jobSeekerID'];?></td>
                   <td><?php echo"<img class = dec src = 'data:image/jpeg;base64,".base64_encode($rows['jobSeekerPic'])."'>"?></td>
                   <td><?php echo $rows['jobSeekerName'];?></td>
                   <td><?php echo $rows['jobSeekerMail'];?></td>
                   <td><?php echo $rows['jobSeekerTel'];?></td>
-                  <td><?php echo "<input type='button' value='Delete Job Seeker'  class='adminCompany'>" ?></td>
-                 
+                  <td><?php echo "<input type='button' value='Delete Job Seeker'  class='adminCompanyDel'>" ?></td>
               </tr>
       <?php  
+       
             }
          }
        ?> 
                
             </table>
     </div>
+   
 </div>
 
 
-<div id="footer">
+<div id="footerAdmin">
        
        
                
