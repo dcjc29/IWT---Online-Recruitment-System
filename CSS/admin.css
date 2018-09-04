@@ -49,7 +49,8 @@ div.details{
 }
 img.details{
     height: 200px;
-    width: 150px;
+    width: 170px;
+    padding-left: 25px;
 }
 div.menu{
     float:left;
