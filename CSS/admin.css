@@ -182,7 +182,7 @@ textarea{
     border: 1px solid #ccc;
     box-sizing: border-box;
 }        
-input[type="reset"].message2,  input[type="button"].message2{
+input[type="reset"].message2,  input[type="submit"].message2{
 
     background-color: teal;
     color: white;
@@ -363,6 +363,13 @@ p.noResult{
 
     text-align: center;
     color:red;
+    font-size: 25px;
+    
+}
+p.Result{
+
+    text-align: center;
+    color:darkslategrey;
     font-size: 25px;
     
 }

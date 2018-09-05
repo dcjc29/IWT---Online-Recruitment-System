@@ -59,6 +59,13 @@
         $number=(mysqli_num_rows($result));
         echo $number;
     ?>
+     <br><h4>Number Of Unreplied Messages</h4><br>
+    <?php
+        $query = "SELECT * FROM messages WHERE toPerson = 'admin' AND replied = 0 ";
+        $result = mysqli_query($con, $query);
+        $number=(mysqli_num_rows($result));
+        echo $number;
+    ?>
 </div>  
 </div>
   <?php
