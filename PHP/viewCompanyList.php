@@ -1,5 +1,8 @@
 <?php
-    include "dbConnection.php";
+        include "dbConnection.php";
+        session_start();
+        if(isset($_SESSION['uname']))
+{
 ?>
 <html>
 <head>
@@ -105,3 +108,10 @@
 </body>
 
 </html>
+<?php
+}
+
+else
+    header("location:login_Admin.php");
+
+?>

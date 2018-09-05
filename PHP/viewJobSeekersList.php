@@ -1,6 +1,8 @@
 <?php
-    require "dbConnection.php";
-    session_start();
+        include "dbConnection.php";
+        session_start();
+        if(isset($_SESSION['uname']))
+{
 ?>
 <!DOCTYPE html>
 <html>
@@ -106,3 +108,10 @@
 </body>
 
 </html>
+<?php
+}
+
+else
+    header("location:login_Admin.php");
+
+?>
