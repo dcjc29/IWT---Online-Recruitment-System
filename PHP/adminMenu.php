@@ -70,9 +70,7 @@
 </div>
   <?php
     include "adminFooter.php";
-    }
-    else
-        header("location:login_Admin.php");
+   
    
    ?>            
 
@@ -82,3 +80,10 @@
 </body>
 
 </html>
+<?php
+   
+    }
+    else
+        header("location:login_Admin.php");
+   
+   ?>            

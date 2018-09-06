@@ -10,6 +10,7 @@
 <title>Admin-Candidate</title>
 <link rel="stylesheet" type="text/css" href="CSS\Stylesheet.css">
 <link rel="stylesheet" type="text/css" href="CSS\admin.css">
+<link rel="stylesheet" type="text/css" href="CSS\modalforms.css">
 </head>
 
 <body>
@@ -32,7 +33,7 @@
     </form>
 </div>
 <div class="adminCandidate">
-        <table class="adminCandidate">
+        <table class="adminCandidate" id="adminCandidate">
         <col width="5%">
         <col width="15%">
         <col width="20%">
@@ -60,7 +61,7 @@
                   <td><?php echo $rows['jobSeekerName'];?></td>
                   <td><?php echo $rows['jobSeekerMail'];?></td>
                   <td><?php echo $rows['jobSeekerTel'];?></td>
-                  <td><?php echo "<input type='button' value='Delete Job Seeker'  class='adminCompanyDel'>" ?></td>
+                  <td><?php echo "<input type='button' onclick='openModal()' value='Delete Job Seeker'  class='adminCompanyDel'>" ?></td>
                  
               </tr>
       <?php  
@@ -84,7 +85,7 @@
                   <td><?php echo $rows['jobSeekerName'];?></td>
                   <td><?php echo $rows['jobSeekerMail'];?></td>
                   <td><?php echo $rows['jobSeekerTel'];?></td>
-                  <td><?php echo "<input type='button' value='Delete Job Seeker'  class='adminCompanyDel'>" ?></td>
+                  <td><?php echo "<input type='button' onclick='openModal()' value='Delete Job Seeker'  class='adminCompanyDel'>" ?></td>
               </tr>
       <?php  
        
@@ -93,7 +94,81 @@
        ?> 
                
             </table>
-    </div>
+            <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Do You Want To Delete This Job Seeker?</h3>
+            </div>
+        
+        
+            <div class="modal-body">
+                
+            <span>Job Seeker ID</span>
+            <span>Name</span>
+            <span>Email</span>
+            <span>Telephone No</span><br>
+        
+                <form method="post">
+                <input type="text" name="sId" id="sId2" hidden>
+                <input type="text" id="sId" disabled>
+                <input type="text"  id="sName" disabled>
+                <input type="text"  id="sMail" disabled>
+                <input type="text"  id="sTel" disabled>
+       
+            </div>    
+         
+                    <div class="modal-footer">
+                    <button name="confirm" class="confirmBtn">Confirm</button>
+                    <?php
+                    if(isset($_POST['confirm'])){
+                        $id = $_POST['sId'];    
+                        
+                        mysqli_query($con,"DELETE  FROM jobseeker WHERE jobSeekerID ='$id'");
+                        echo"<script>alert(\"Successfully Deleted\"); location.href=\"viewJobSeekersList.php\";</script>";
+                }    ?> 
+                    </form>
+                    <button class="closeBtn" onclick="closeModal()">Cancel</button>
+                    
+                    
+                
+            
+                
+                    </div>  
+            </div>
+           </div>
+</div>    
+
+<script type="text/javascript">
+
+              
+    function openModal(){
+                      
+        var modal = document.getElementById('simpleModal');
+        var closeBtn = document.getElementsByClassName('closeBtn');
+        modal.style.display = 'block';
+        var table = document.getElementById('adminCandidate');
+        var rowIndex;
+        for (var i = 0; i < table.rows.length; i++) {
+                table.rows[i].onclick = function () {
+                    rowIndex = this.rowIndex;
+                    document.getElementById("sId").value = this.cells[0].innerHTML;
+                    document.getElementById("sId2").value = this.cells[0].innerHTML;
+                    document.getElementById("sName").value = this.cells[2].innerHTML;
+                    document.getElementById("sMail").value = this.cells[3].innerHTML;
+                    document.getElementById("sTel").value = this.cells[4].innerHTML;
+                }
+            }
+        }
+                  
+    
+                  
+                  
+    function closeModal(){
+        document.getElementById('simpleModal').style.display = 'none';
+    }
+    
+        
+</script>
    
 </div>
 
