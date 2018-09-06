@@ -56,12 +56,14 @@
         if ($oldpass == $opass){
            mysqli_query($con,"UPDATE administrator SET passw = '$npass' WHERE uname = '$uname';");
             echo "<p class='Result'>Successfully Changed!!!</p>";
+            session_destroy();
+            header("refresh:2;url=login_Admin.php");
             }
         else    
             echo" <p class='noResult'> Invalid Password.Try Again!!!</p>";
     }
 ?></span>
-                <input type="text" class="passChange" name = "opass" placeholder="Enter Old Password" id="oldpass"><br>
+                <input type="password" class="passChange" name = "opass" placeholder="Enter Old Password" id="oldpass"><br>
                 <input type="password" class="passChange" name = "npass" placeholder="Enter New Password" id ="newpass"><br>
                 <input type="password" class="passChange"  name ="cpass" placeholder="Confirm New Password" id="conpass"><br>
                 <input name="passChange" type="submit" class="passChange" value="Change Now"><br>
