@@ -89,7 +89,7 @@
             <h5  class="contactContent">Telephone Number</h5>
             <h4  class="contactContent">+94-112220546 / 112220547</h4><br><br>
             <h5  class="contactContent">E-mail</h5>
-            <a  class="contactContent" href="https:\\www.gmail.com" target="#"><h4  class="contactContent">hiredSL.com@gmail.com</h4></a>
+            <a  class="contactContent" href="https:\\www.gmail.com" target="#"><h4  class="contactContent">hiredsl.com@gmail.com</h4></a>
     </div>
     
     <div class="contactContent2">

@@ -11,13 +11,13 @@
         <div class="row">
                 <div class="flcolumn">
                     <a href="AboutUs.html">About Us</a><br>
-                    <a href="ContactUs.html">Contact Us</a><br>
+                    <a href="contactUs.php">Contact Us</a><br>
                     <a href="Privacy.html">Privacy Policy</a><br>
 
                 </div>
                 <div style="width:50%;text-align:center;display: inline-block;">
                     <p>+94-112220546 / 112220547</p>
-                    <a href="https://www.gmail.com" target="#"><p>hired@gmail.com</p></a><br>
+                    <a href="https://www.gmail.com" target="#"><p>hiredsl.com@gmail.com</p></a><br>
                     <p>copyright   2018</p>
                 </div>
                 <div class="frcolumn">
