@@ -23,12 +23,13 @@
         }
 
                    
-    function openModal(){
+    function openModal($i,$year,$month){
                       
                       var modal = document.getElementById('simpleModal');
                       var closeBtn = document.getElementsByClassName('closeBtn');
                       modal.style.display = 'block';
-                        document.getElementById('date').value=document.getElementById('dateM').value;
+                        document.getElementById('date').value=$year+"-"+$month+"-"+$i;
+                        document.getElementById('spanD').innerHTML=$year+"/"+$month+"/"+$i;
                 
             
         
@@ -68,17 +69,14 @@
 <div >
     <h3>Interview Schedule</h3><br>
     <?php
-    if(isset($_GET['day'])){
-        $day = $_GET['day'];
-    }
-    else{
-        $day = date("j");
-    }
+    
+        $day = date("d");
+    
     if(isset($_GET['month'])){
         $month = $_GET['month'];
     }
     else{
-        $month = date("n");
+        $month = date("m");
     }
     if(isset($_GET['year'])){
         $year = $_GET['year'];
@@ -114,25 +112,27 @@
     </tr>
     <?php 
         echo "<tr>";
-            for($i = 1 ; $i < $numDays + 1 ; $i++,$counter++){
+            for($i = 1 ; $i < $numDays + 1 ; $i++,$counter++)
+            
+            {
 
                 $timeStamp = strtotime("$year-$month-$i");
 
                 if($i == 1){
                     $firstDay = date("w", $timeStamp);
                     for($j = 0 ; $j < $firstDay ; $j++,$counter++){
-                        echo"<td style='width:50px'><button style='width:50px; background-color:grey;'>&nbsp;</button></td>";
+                        echo"<td style='width:50px'></td>";
                     }
                 }
                 if($counter % 7 == 0){
                     echo "</tr><tr>";
                 }
             
-                echo "<td align = 'center'><input type='button' onclick='openModal()' style='width:50px; background-color:grey;' value='$i'  id='dateM'></td>";
+                echo "<td align = 'center'><input type='button' onclick='openModal($i,$year,$month)' style='width:50px; background-color:grey;' value='$i'  id='dateM'></td>";
                 echo"<div id=\"simpleModal\" class=\"modal\">
         <div class=\"modal-content\">
             <div class=\"modal-header\">
-                <h3>Scheduled Interview</h3>
+                <h3>Scheduled Interview On <span id=\"spanD\"></span></h3>
             </div>
         
         
@@ -144,7 +144,7 @@
             <span>Date</span>
             <span>Time</span><br>
                 <form method=\"post\">
-                <input type=\"text\" id=\"date\">
+                <input type=\"text\" id=\"date\" hidden>
                 <input type=\"text\" name=\"cId\" id=\"cId2\" hidden>
                 <input type=\"text\" name=\"sId\" id=\"sId2\" hidden>
                 <input type=\"text\" id=\"cId\" disabled>
