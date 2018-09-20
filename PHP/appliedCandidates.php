@@ -1,6 +1,12 @@
 <?php
-        include "dbConnection.php";
-?>        
+    
+    include "dbConnection.php";
+    session_start();
+    if(isset($_SESSION['unameC']))
+    { 
+      
+    
+?>      
 <html>
 <head>
 <title>Home Page</title>
@@ -137,3 +143,11 @@
 </body>
 
 </html>
+<?php
+       
+    }
+    else
+        {
+            header("location:login_Employer.php");
+        }
+?>

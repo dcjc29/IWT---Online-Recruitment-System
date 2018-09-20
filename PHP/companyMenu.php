@@ -1,3 +1,10 @@
+<?php
+    
+    include "dbConnection.php";
+    session_start();
+    if(isset($_SESSION['unameC']))
+    { 
+?>         
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +60,7 @@
     <h3>Company Name</h3><br>
     <img src="src\img_457957.png" class="details">
     <p>Other Details</p>
-    <a href="HomePage.html"><input type="button" value="Log Out" class="details"></a>
+    <input type="button" value="Log Out" class="details" onClick="location.href='logout.php'">
 </div>    
 <div class="menu">
 <ul class="menu">
@@ -129,46 +136,65 @@
                 }
             
                 echo "<td align = 'center'><input type='button' onclick='openModal($i,$year,$month)' style='width:50px; background-color:grey;' value='$i'  id='dateM'></td>";
-                echo"<div id=\"simpleModal\" class=\"modal\">
-        <div class=\"modal-content\">
-            <div class=\"modal-header\">
-                <h3>Scheduled Interview On <span id=\"spanD\"></span></h3>
-            </div>
-        
-        
-            <div class=\"modal-body\">
                 
-            <span>Candidate ID</span>
-            <span>Name</span>
-            <span>Job ID</span>            
-            <span>Date</span>
-            <span>Time</span><br>
-                <form method=\"post\">
-                <input type=\"text\" id=\"date\" hidden>
-                <input type=\"text\" name=\"cId\" id=\"cId2\" hidden>
-                <input type=\"text\" name=\"sId\" id=\"sId2\" hidden>
-                <input type=\"text\" id=\"cId\" disabled>
-                <input type=\"text\" id=\"cName\" disabled>
-                <input type=\"text\" id=\"jId\" disabled>
-                <input type=\"date\"  id=\"iDate\" disabled>
-                <input type=\"time\"  id=\"iTime\" disabled>
-                
-       
-            </div>    
-         
-                    <div class=\"modal-footer\">
-                        <button class=\"closeBtn\" onclick=\"closeModal()\">Cancel</button>
-                    </div>  
-            </div>
-            </form>
-           </div>
-</div>    
-</div>";
             }
         echo "</tr>";
     ?>
 
 </table> 
+<div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Scheduled Interview On <span id="spanD"></span></h3>
+            </div>
+        
+        
+            <div class="modal-body">
+                
+                <form method="post">
+                <input type="text" id="date" hidden>
+                <table>
+                <col width="100px">
+                <col width="300px">
+                <col width="300px">
+                <col width="300px">
+                <col width="300px">
+                <tr>
+                    <th hidden>Candidate ID</th>
+                    <th>Job ID</th>
+                    <th>Candidate Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+                <?php
+                
+                            $query = "SELECT i.canID,i.jobID,j.jobSeekerName,i.iDate,i.iTime  FROM interviews i,jobseeker j WHERE j.jobSeekerID == i.canID";
+                            $result = mysqli_query($con,$query);
+                            while($rows = mysqli_fetch_assoc($result)){
+            ?>
+              <tr>
+                  <td><?php echo $rows['i.canID'];?></td>
+                  <td><?php echo $rows['i.jobID'];?></td>
+                  <td><?php echo $rows['j.jobSeekerName'];?></td>
+                  <td><?php echo $rows['i.iDate'];?></td>
+                  <td><?php echo $rows['i.iTime'];?></td>
+              </tr>
+      <?php  
+            
+
+         }       
+       ?> 
+         </table>
+            </div>    
+         
+                    <div class="modal-footer">
+                        <button class="closeBtn" onclick="closeModal()">Cancel</button>
+                    </div>  
+            </div>
+            </form>
+           </div>
+</div>    
+</div>
         </div>  
 
 
@@ -178,3 +204,11 @@
 </body>
 
 </html>
+<?php
+       
+    }
+    else
+        {
+            header("location:login_Employer.php");
+        }
+?>
