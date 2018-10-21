@@ -31,7 +31,8 @@
                     <th>Options</th>
                 </tr>
             <?php
-                            $query = "SELECT a.jobID,a.CanID,j.jobSeekerName FROM appliedcandidates  a,jobseeker j WHERE a.CanID = j.jobSeekerID";
+            $uname = $_SESSION['unameC'];
+                            $query = "SELECT a.jobID,a.CanID,j.jobSeekerName FROM appliedcandidates  a,jobseeker j WHERE a.CanID = j.jobSeekerID AND a.comID=(SELECT comID FROM company WHERE uName = '$uname')";
                             $results = mysqli_query($con,$query);
                             while($rows = mysqli_fetch_assoc($results)){
             ?>

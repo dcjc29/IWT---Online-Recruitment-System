@@ -4,6 +4,8 @@
     session_start();
     if(isset($_SESSION['unameC']))
     { 
+        $GLOBALS['intDate']="0000-00-00";
+      
 ?>         
 <!DOCTYPE html>
 <html>
@@ -28,24 +30,6 @@
             }
             document.location.href = "<?php $_SERVER['PHP_SELF'];?>?month="+(month+1)+"&year="+year;
         }
-
-                   
-    function openModal($i,$year,$month){
-                      
-                      var modal = document.getElementById('simpleModal');
-                      var closeBtn = document.getElementsByClassName('closeBtn');
-                      modal.style.display = 'block';
-                        document.getElementById('date').value=$year+"-"+$month+"-"+$i;
-                        document.getElementById('spanD').innerHTML=$year+"/"+$month+"/"+$i;
-                
-            
-        
-                      }
-                                
-                  function closeModal(){
-                      document.getElementById('simpleModal').style.display = 'none';
-                  
-                  }
     </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -122,7 +106,7 @@
             for($i = 1 ; $i < $numDays + 1 ; $i++,$counter++)
             
             {
-
+                
                 $timeStamp = strtotime("$year-$month-$i");
 
                 if($i == 1){
@@ -134,65 +118,16 @@
                 if($counter % 7 == 0){
                     echo "</tr><tr>";
                 }
-            
-                echo "<td align = 'center'><input type='button' onclick='openModal($i,$year,$month)' style='width:50px; background-color:grey;' value='$i'  id='dateM'></td>";
+                echo "<td align = 'center'><a href = interview.php?date=$i&month=$month&year=$year>$i</a></td>";
+               
                 
             }
         echo "</tr>";
     ?>
 
 </table> 
-<div id="simpleModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Scheduled Interview On <span id="spanD"></span></h3>
-            </div>
-        
-        
-            <div class="modal-body">
-                
-                <form method="post">
-                <input type="text" id="date" hidden>
-                <table>
-                <col width="100px">
-                <col width="300px">
-                <col width="300px">
-                <col width="300px">
-                <col width="300px">
-                <tr>
-                    <th hidden>Candidate ID</th>
-                    <th>Job ID</th>
-                    <th>Candidate Name</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                </tr>
-                <?php
-                
-                            $query = "SELECT i.canID,i.jobID,j.jobSeekerName,i.iDate,i.iTime  FROM interviews i,jobseeker j WHERE j.jobSeekerID == i.canID";
-                            $result = mysqli_query($con,$query);
-                            while($rows = mysqli_fetch_assoc($result)){
-            ?>
-              <tr>
-                  <td><?php echo $rows['i.canID'];?></td>
-                  <td><?php echo $rows['i.jobID'];?></td>
-                  <td><?php echo $rows['j.jobSeekerName'];?></td>
-                  <td><?php echo $rows['i.iDate'];?></td>
-                  <td><?php echo $rows['i.iTime'];?></td>
-              </tr>
-      <?php  
-            
 
-         }       
-       ?> 
-         </table>
-            </div>    
-         
-                    <div class="modal-footer">
-                        <button class="closeBtn" onclick="closeModal()">Cancel</button>
-                    </div>  
-            </div>
-            </form>
-           </div>
+          
 </div>    
 </div>
         </div>  

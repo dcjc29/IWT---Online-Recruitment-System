@@ -36,7 +36,8 @@
                     <th>Options</th>
                 </tr>
             <?php
-                            $query = "SELECT * FROM jobs";
+            $uname=$_SESSION['unameC'];
+                            $query = "SELECT j.jobID,j.jobTitle,j.jobDes FROM jobs j WHERE  j.comID = (SELECT comID FROM company WHERE uName = '$uname') ";
                             $results = mysqli_query($con,$query);
                             while($rows = mysqli_fetch_assoc($results)){
             ?>

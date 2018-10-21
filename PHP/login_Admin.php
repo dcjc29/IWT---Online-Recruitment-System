@@ -74,9 +74,7 @@ function validateLogin(){
 	<input type="password" id="passtxt" name="passtxt" placeholder="Enter Password" class="login"><br>
     <input name="login" type="submit" value="Login" class="login">&nbsp&nbsp;
 	<input type="reset" value="Reset" class="login">
-	<a ><input type="button" value="Forgot Password" class="login"></a>
-	<h3>&nbsp;&nbsp;&nbsp;&nbsp;Don't have an account ? <a href="Registration.html">Register Now</a></h3>
-	
+	<a ><input type="button" value="Forgot Password" class="login" action="forgotPassword"></a>
 </form>
 <div style="float: right; display: inline; margin-top: 150px; margin-right: 50px; height: 400px;width: 400px;">
         <img src="src\login.png">
